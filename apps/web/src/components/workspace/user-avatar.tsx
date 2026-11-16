@@ -83,7 +83,7 @@ export function UserAvatar({ user, className, square = false, lazy = false, labe
 }
 
 /** Someone's name, then their bio after a dash where they've written one. */
-export const userTitle = ({ name, bio }: { name: string; bio?: string | null }) => (bio?.trim() ? `${name} – ${bio}` : name);
+export const userTitle = ({ name, bio }: { name: string; bio?: string | null }) => (bio?.trim() ? `${name} - ${bio}` : name);
 
 /**
  * How far around an avatar link takes taps on touch screens, centered on it. It's drawn with insets,

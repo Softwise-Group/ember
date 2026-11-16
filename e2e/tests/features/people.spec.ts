@@ -75,7 +75,7 @@ test.describe("Avatars open people's pages", () => {
     await linus.boost(asked.id, "👍");
     const ada = await members.signIn(unique("Ada"));
     const { page } = ada;
-    const graceTitle = `Grace ${tag} – Wrote the first compiler`;
+    const graceTitle = `Grace ${tag} - Wrote the first compiler`;
 
     // The people @ lists, and the mention written, aren't links, so a click there picks them.
     await ada.composer().pressSequentially("Thanks @");

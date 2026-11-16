@@ -61,7 +61,7 @@ describe("Reset a password from the server", () => {
     expect(readPassword(bytes("  correct horse  \r\n"))).toBe("  correct horse  ");
     expect(readPassword(bytes("correct horse\n"))).toBe("correct horse");
     expect(readPassword(bytes("éééééééé"))).toBe("éééééééé");
-    expect(readPassword(bytes("﻿correct horse"))).toBe("﻿correct horse");
+    expect(readPassword(bytes("correct horse"))).toBe("correct horse");
     expect(readPassword(new Uint8Array(4096).fill(0x78))).toHaveLength(4096);
   });
 

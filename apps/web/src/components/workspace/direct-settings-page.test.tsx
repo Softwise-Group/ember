@@ -163,7 +163,7 @@ describe("Avatars open people's pages", () => {
   it("links each card's avatar to the person's page, titled with their name and bio, and goes there in place", async () => {
     const listed: DirectoryUser = { ...grace, bio: "Wrote the first compiler", role: "member", status: "active", avatarUrl: "/users/u2/avatar" };
     const { user } = showPage(withGraceAndLinus, new Map([[grace.id, listed]]));
-    const link = screen.getByRole("link", { name: "Grace Hopper – Wrote the first compiler" });
+    const link = screen.getByRole("link", { name: "Grace Hopper - Wrote the first compiler" });
     expect(link).toHaveAttribute("href", "/users/u2");
     expect(link.querySelector("img")).toHaveAttribute("loading", "lazy");
     expect(screen.getByRole("link", { name: "Linus Torvalds" })).toHaveAttribute("href", "/users/u3");

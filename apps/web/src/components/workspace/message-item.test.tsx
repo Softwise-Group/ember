@@ -415,7 +415,7 @@ describe("Message rows", () => {
         ))}
       </PeopleContext>,
     );
-    expect(screen.getByText("Ada King")).toHaveAttribute("title", "Ada King – Countess of Lovelace");
+    expect(screen.getByText("Ada King")).toHaveAttribute("title", "Ada King - Countess of Lovelace");
     expect(screen.getByText("Grace Hopper")).toHaveAttribute("title", "Grace Hopper");
     // Someone the directory doesn't list keeps the name the message was given.
     expect(screen.getByText("Linus")).toHaveAttribute("title", "Linus");

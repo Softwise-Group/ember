@@ -146,18 +146,18 @@ function runAudits({ insets, denseTargets }: { insets: SafeArea; denseTargets: s
       if (style.webkitLineClamp !== "none" || /auto|scroll/.test(style.overflowY)) checkY = false;
       const rect = clipper.getBoundingClientRect();
       if (checkX && style.overflowX !== "visible" && (box.left < rect.left - TOLERANCE || box.right > rect.right + TOLERANCE)) {
-        return `${describe(node)} spans ${px(box.left)}–${px(box.right)} but ${describe(clipper)} cuts it off at ${px(rect.left)}–${px(rect.right)}`;
+        return `${describe(node)} spans ${px(box.left)}-${px(box.right)} but ${describe(clipper)} cuts it off at ${px(rect.left)}-${px(rect.right)}`;
       }
       if (checkY && style.overflowY !== "visible" && (box.top < rect.top - TOLERANCE || box.bottom > rect.bottom + TOLERANCE)) {
-        return `${describe(node)} spans ${px(box.top)}–${px(box.bottom)} down the screen but ${describe(clipper)} cuts it off at ${px(rect.top)}–${px(rect.bottom)}`;
+        return `${describe(node)} spans ${px(box.top)}-${px(box.bottom)} down the screen but ${describe(clipper)} cuts it off at ${px(rect.top)}-${px(rect.bottom)}`;
       }
     }
     if (checkX && (box.left < -TOLERANCE || box.right > innerWidth + TOLERANCE)) {
-      return `${describe(node)} spans ${px(box.left)}–${px(box.right)} on a ${px(innerWidth)}-wide screen`;
+      return `${describe(node)} spans ${px(box.left)}-${px(box.right)} on a ${px(innerWidth)}-wide screen`;
     }
     const element = node instanceof Element ? node : node.parentElement!;
     if (checkY && !scrollerOf(element, "y") && (box.top < -TOLERANCE || box.bottom > innerHeight + TOLERANCE)) {
-      return `${describe(node)} spans ${px(box.top)}–${px(box.bottom)} down a ${px(innerHeight)}-tall screen and can't be scrolled into view`;
+      return `${describe(node)} spans ${px(box.top)}-${px(box.bottom)} down a ${px(innerHeight)}-tall screen and can't be scrolled into view`;
     }
     return null;
   };
@@ -343,7 +343,7 @@ function runAudits({ insets, denseTargets }: { insets: SafeArea; denseTargets: s
       painted.bottom > safe.bottom + TOLERANCE && box.bottom - room.bottom > safe.bottom + TOLERANCE && `bottom inset (${px(insets.bottom)})`,
     ].filter(Boolean);
     if (outside.length > 0) {
-      safeArea.push(`${describe(node)} at ${px(painted.left)},${px(painted.top)}–${px(painted.right)},${px(painted.bottom)} is under the ${outside.join(" and ")}`);
+      safeArea.push(`${describe(node)} at ${px(painted.left)},${px(painted.top)}-${px(painted.right)},${px(painted.bottom)} is under the ${outside.join(" and ")}`);
     }
   };
   for (const node of textNodes()) {

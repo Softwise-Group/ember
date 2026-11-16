@@ -200,7 +200,7 @@ export function compare(before: Results, after: Results, threshold: number): num
   if (before.environment.cpu !== after.environment.cpu || before.environment.cores !== after.environment.cores) {
     console.log("\nThese runs come from different machines, so differences say as much about the hardware as the code.");
   }
-  const lines = rows.map((row) => `| ${row.metric} | ${row.before} | ${row.after ?? "–"} | ${formatChange(row.change)} | ${row.verdict} |`);
+  const lines = rows.map((row) => `| ${row.metric} | ${row.before} | ${row.after ?? "-"} | ${formatChange(row.change)} | ${row.verdict} |`);
   console.log(["", "| Metric | Before | After | Change | |", "| --- | --: | --: | --: | --- |", ...lines].join("\n"));
   console.log(
     `\n${worse} metric${worse === 1 ? "" : "s"} worse${missing ? ` and ${missing} missing from the second run` : ""}. ` +

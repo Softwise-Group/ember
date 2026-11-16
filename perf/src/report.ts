@@ -13,10 +13,10 @@ export interface Results {
 const STORAGE_NAMES: Record<Storage, string> = { "do-sqlite": "DO SQLite", d1: "D1" };
 
 const num = (value: number | null | undefined, digits = 0) =>
-  value === null || value === undefined || Number.isNaN(value) ? "–" : value.toLocaleString("en-US", { maximumFractionDigits: digits });
+  value === null || value === undefined || Number.isNaN(value) ? "-" : value.toLocaleString("en-US", { maximumFractionDigits: digits });
 /** Milliseconds, with a decimal only where it matters. */
 const ms = (value: number | null | undefined) => num(value, value !== null && value !== undefined && value < 10 ? 1 : 0);
-const pct = (value: number | null) => (value === null ? "–" : `${value}%`);
+const pct = (value: number | null) => (value === null ? "-" : `${value}%`);
 const p = (summary: Summary | null, key: "p50" | "p95" | "p99") => ms(summary?.[key]);
 
 function table(headers: string[], rows: string[][]): string {
@@ -97,7 +97,7 @@ function backendSection(backend: Results["backend"]): string[] {
             num(step.joinsPerSecond, 1),
             `${num(step.presenceKbPerJoin)} KB`,
             pct(step.window.busiestProcessCpuPercent),
-            step.window.serverRssMb === null ? "–" : `${num(step.window.serverRssMb)} MB`,
+            step.window.serverRssMb === null ? "-" : `${num(step.window.serverRssMb)} MB`,
           ]),
         ),
       ),
@@ -130,7 +130,7 @@ function backendSection(backend: Results["backend"]): string[] {
             p(step.directory, "p95"),
             num(step.tabsPerSecond, 1),
             pct(step.window.busiestProcessCpuPercent),
-            step.window.serverRssMb === null ? "–" : `${num(step.window.serverRssMb)} MB`,
+            step.window.serverRssMb === null ? "-" : `${num(step.window.serverRssMb)} MB`,
           ]),
         ),
       ),
