@@ -127,9 +127,9 @@ describe("Avatars open people's pages", () => {
 
   it("links to the person's page, titled with their name and bio as the directory lists them, around the image screen readers skip", () => {
     const { image } = picture(<AvatarLink user={{ id: ada.id, name: "Ada" }} />, new Map([[ada.id, { ...ada, bio: "Wrote the first program" }]]));
-    const link = screen.getByRole("link", { name: "Ada Lovelace – Wrote the first program" });
+    const link = screen.getByRole("link", { name: "Ada Lovelace - Wrote the first program" });
     expect(link).toHaveAttribute("href", "/users/u1");
-    expect(link).toHaveAttribute("title", "Ada Lovelace – Wrote the first program");
+    expect(link).toHaveAttribute("title", "Ada Lovelace - Wrote the first program");
     expect(link).toContainElement(image);
     expect(image).toHaveAttribute("src", ada.avatarUrl);
     expect(image).toHaveAttribute("aria-hidden", "true");
@@ -159,8 +159,8 @@ describe("Avatars open people's pages", () => {
   });
 
   it("titles someone with their name, then their bio after a dash where it isn't blank, as `User#title` does", () => {
-    expect(userTitle({ name: "Ada", bio: "Wrote the first program" })).toBe("Ada – Wrote the first program");
-    expect(userTitle({ name: "Ada", bio: " Poet " })).toBe("Ada –  Poet ");
+    expect(userTitle({ name: "Ada", bio: "Wrote the first program" })).toBe("Ada - Wrote the first program");
+    expect(userTitle({ name: "Ada", bio: " Poet " })).toBe("Ada - Poet ");
     expect(userTitle({ name: "Ada", bio: "  " })).toBe("Ada");
     expect(userTitle({ name: "Ada", bio: null })).toBe("Ada");
     expect(userTitle({ name: "Ada" })).toBe("Ada");

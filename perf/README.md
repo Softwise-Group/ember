@@ -15,7 +15,7 @@ pnpm perf web
 Each run writes `perf/results/<time>/report.md` and `results.json` (or wherever `--out` says) and
 prints the report. It needs Node 22.19 or later, which runs this package's TypeScript directly, and
 Chrome for the web suite: an installed Chrome is found automatically, or set `CHROME_PATH`. Server
-CPU and memory come from `/proc`, so they show as "–" outside Linux.
+CPU and memory come from `/proc`, so they show as "-" outside Linux.
 
 ## Did my change make it slower?
 

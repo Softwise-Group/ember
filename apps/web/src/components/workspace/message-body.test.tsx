@@ -194,7 +194,7 @@ describe("How mentions look", () => {
 describe("Avatars open people's pages", () => {
   it("links a mention's avatar to the person's page, titled with their name and bio, and follows it in place", async () => {
     const content = mention(new Map([[grace.id, { ...grace, bio: "Wrote the first compiler" }]]), [{ id: grace.id, name: "Grace" }]);
-    const link = screen.getByRole("link", { name: "Grace Hopper – Wrote the first compiler" });
+    const link = screen.getByRole("link", { name: "Grace Hopper - Wrote the first compiler" });
     expect(content.querySelector("p > span > a")).toBe(link);
     expect(link).toHaveAttribute("href", `/users/${grace.id}`);
     await userEvent.click(link);

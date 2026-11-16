@@ -135,7 +135,7 @@ it's yours. Slack's plans are as [slack.com/pricing](https://slack.com/pricing) 
 | **Message history** | Everything, for as long as you keep it | Free: the last 90 days, and messages are deleted after a year. Paid plans: everything |
 | **Where it runs** | Your Cloudflare account | Slack's cloud |
 | **Source code** | MIT license, on GitHub | Closed |
-| **Your own domain** | ✅ such as chat.example.com | — only yourteam.slack.com |
+| **Your own domain** | ✅ such as chat.example.com | - only yourteam.slack.com |
 | **Branding** | Name, logo, tagline, room and navigation icons, and custom CSS | Workspace name and icon |
 
 ### Everyday chat
@@ -161,14 +161,14 @@ it's yours. Slack's plans are as [slack.com/pricing](https://slack.com/pricing) 
 
 | | Ember | Slack |
 |---|---|---|
-| **Apps and workflows** | — | ✅ a directory of 2,600+ apps (Free: 10 of them) and Workflow Builder |
-| **Voice and video calls** | — | ✅ huddles (Free: one-on-one only) |
+| **Apps and workflows** | - | ✅ a directory of 2,600+ apps (Free: 10 of them) and Workflow Builder |
+| **Voice and video calls** | - | ✅ huddles (Free: one-on-one only) |
 | **AI** | @ember and agents of your own answer when you mention or DM them, each on the model you choose | ✅ summaries, recaps and AI search on every plan, more on Business+ |
-| **Canvases, lists and clips** | — | ✅ |
-| **Channels shared with other companies** | — | ✅ Slack Connect |
-| **Scheduled messages and reminders** | — | ✅ |
-| **Guest accounts** | — | ✅ on paid plans |
-| **Exports of every message, DMs included** | — not yet | ✅ on Business+ and up |
+| **Canvases, lists and clips** | - | ✅ |
+| **Channels shared with other companies** | - | ✅ Slack Connect |
+| **Scheduled messages and reminders** | - | ✅ |
+| **Guest accounts** | - | ✅ on paid plans |
+| **Exports of every message, DMs included** | - not yet | ✅ on Business+ and up |
 | **Support** | GitHub issues | ✅ 24/7 on Business+ |
 
 If your team lives in huddles, workflows and a hundred integrations, Slack earns its price. If you

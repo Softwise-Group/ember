@@ -2817,7 +2817,7 @@ describe("Avatars open people's pages", () => {
     const { user } = showPage(asAda, [ada, { ...grace, bio: "Wrote the first compiler" }, mallory]);
     const link = within(await rowOf("Grace Hopper")).getByRole("link");
     expect(link).toHaveAttribute("href", "/users/u2");
-    expect(link).toHaveAttribute("title", "Grace Hopper – Wrote the first compiler");
+    expect(link).toHaveAttribute("title", "Grace Hopper - Wrote the first compiler");
     expect(within(await rowOf("Mallory")).getByRole("link", { name: "Mallory" })).toHaveAttribute("href", "/users/u4");
     await user.click(link);
     expect(location.pathname).toBe("/users/u2");

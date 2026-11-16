@@ -35,7 +35,7 @@ function renderList(rooms: SidebarRoom[], people: People = new Map()) {
 const list = () => screen.getByRole("list", { name: "Conversation notifications" });
 /** Each row's name and what its bell says, top to bottom, with "—" for the rule between rooms and DMs. */
 const rows = () =>
-  [...list().children].map((row) => (row.tagName === "HR" ? "—" : `${within(row as HTMLElement).getByRole("link").textContent}: ${within(row as HTMLElement).getByRole("checkbox").textContent}`));
+  [...list().children].map((row) => (row.tagName === "HR" ? "-" : `${within(row as HTMLElement).getByRole("link").textContent}: ${within(row as HTMLElement).getByRole("checkbox").textContent}`));
 
 afterEach(() => vi.restoreAllMocks());
 
@@ -49,7 +49,7 @@ describe("Levels on your profile", () => {
       "zebra: Notifying about @ mentions",
       // SQLite's LOWER() leaves É as it is, after the letters A to Z.
       "Éclair: Notifying about @ mentions",
-      "—",
+      "-",
       "Linus and Grace Hopper: Notifying about all messages",
       "Ada Lovelace: Notifying about all messages",
     ]);
